@@ -1,0 +1,33 @@
+name: Integration - liber-restless
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      matrix:
+        python-version: ["3.8", "3.9","3.10","3.11"]
+    name: Tests on ${{ matrix.python-version }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python and Tox
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+          architecture: x64
+      - name: Upgrade pip
+        # Update pip to a stable version in the future when pip-compile fix its
+        # issue with pip
+        run: python3 -m pip install --upgrade 'pip<24'
+      - name: Install Dependencies
+        run: |
+          python setup.py develop &&
+          pip install -r requirements-dev.txt
+          # pip-compile &&
+          # pre-commit install
+      #- name: Run pre-commit
+      #  run: pre-commit run --all-files
+      - name: Run tests using Tox
+        run: tox
