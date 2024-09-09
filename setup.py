@@ -6,9 +6,9 @@ import restless
 
 
 setup(
-    name='restless',
+    name='liber-restless',
     version=restless.VERSION,
-    description='A lightweight REST miniframework for Python.',
+    description='A lightweight REST miniframework for Python forked from Restless.',
     author='Daniel Lindsley',
     author_email='daniel@toastdriven.com',
     url='https://github.com/toastdriven/restless/',
