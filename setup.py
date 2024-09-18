@@ -6,12 +6,12 @@ import restless
 
 
 setup(
-    name='restless',
+    name='liber-restless',
     version=restless.VERSION,
-    description='A lightweight REST miniframework for Python.',
-    author='Daniel Lindsley',
+    description='A lightweight REST miniframework for Python forked from toastdriven/restless.',
+    author='Daniel Lindsley (orig.), Liber Capital (fork maintainer)',
     author_email='daniel@toastdriven.com',
-    url='https://github.com/toastdriven/restless/',
+    url='https://github.com/libercapital/liber-restless/',
     long_description=open('README.rst', 'r').read(),
     packages=[
         'restless',
@@ -42,6 +42,8 @@ setup(
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
         'Topic :: Utilities'
     ],
 )
